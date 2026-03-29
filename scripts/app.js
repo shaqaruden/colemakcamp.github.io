@@ -587,10 +587,10 @@ function updateLayoutUI() {
         case 'ansi':
             cSheet = document.querySelector('.cheatsheet');
             cSheet.parentNode.classList.add('ansi');
-            cSheet.parentNode.classList.remove('iso','ortho');
+            cSheet.parentNode.classList.remove('iso','ortho','ortho_extended');
             cSheet.innerHTML = ansiDivs;
             customInput.classList.add('ansi');
-            customInput.classList.remove('iso','ortho');
+            customInput.classList.remove('iso','ortho','ortho_extended');
             inputKeyboard.innerHTML = customLayout.ansi;
 
             layoutMaps.colemakdh.KeyZ = 'x';
@@ -598,12 +598,6 @@ function updateLayoutUI() {
             layoutMaps.colemakdh.KeyC = 'd';
             layoutMaps.colemakdh.KeyV = 'v';
             layoutMaps.colemakdh.KeyB = 'z';
-
-            layoutMaps.colemakdhs.KeyZ = 'x';
-            layoutMaps.colemakdhs.KeyX = 'c';
-            layoutMaps.colemakdhs.KeyC = 'd';
-            layoutMaps.colemakdhs.KeyV = 'v';
-            layoutMaps.colemakdhs.KeyB = 'z';
 
             layoutMaps.tarmakdh.KeyZ = 'x';
             layoutMaps.tarmakdh.KeyX = 'c';
@@ -627,10 +621,10 @@ function updateLayoutUI() {
         case 'iso':
             cSheet = document.querySelector('.cheatsheet');
             cSheet.parentNode.classList.add('iso');
-            cSheet.parentNode.classList.remove('ansi','ortho');
+            cSheet.parentNode.classList.remove('ansi','ortho','ortho_extended');
             cSheet.innerHTML = isoDivs;
             customInput.classList.add('iso');
-            customInput.classList.remove('ansi','ortho');
+            customInput.classList.remove('ansi','ortho','ortho_extended');
             inputKeyboard.innerHTML = customLayout.iso;
 
             layoutMaps.colemakdh.IntlBackslash = 'z';
@@ -639,13 +633,6 @@ function updateLayoutUI() {
             layoutMaps.colemakdh.KeyC = 'd';
             layoutMaps.colemakdh.KeyV = 'v';
             delete layoutMaps.colemakdh.KeyB;
-
-            layoutMaps.colemakdhs.IntlBackslash = 'z';
-            layoutMaps.colemakdhs.KeyZ = 'x';
-            layoutMaps.colemakdhs.KeyX = 'c';
-            layoutMaps.colemakdhs.KeyC = 'd';
-            layoutMaps.colemakdhs.KeyV = 'v';
-            delete layoutMaps.colemakdhs.KeyB;
 
             layoutMaps.tarmakdh.IntlBackslash = 'z';
             layoutMaps.tarmakdh.KeyZ = 'x';
@@ -671,10 +658,10 @@ function updateLayoutUI() {
         case 'ortho':
             cSheet = document.querySelector('.cheatsheet');
             cSheet.parentNode.classList.add('ortho');
-            cSheet.parentNode.classList.remove('ansi','iso');
+            cSheet.parentNode.classList.remove('ansi','iso','ortho_extended');
             cSheet.innerHTML = orthoDivs;
             customInput.classList.add('ortho');
-            customInput.classList.remove('ansi','iso');
+            customInput.classList.remove('ansi','iso','ortho_extended');
             inputKeyboard.innerHTML = customLayout.ortho;
 
             layoutMaps.colemakdh.KeyZ = 'z';
@@ -683,11 +670,39 @@ function updateLayoutUI() {
             layoutMaps.colemakdh.KeyV = 'd';
             layoutMaps.colemakdh.KeyB = 'v';
 
-            layoutMaps.colemakdhs.KeyZ = 'z';
-            layoutMaps.colemakdhs.KeyX = 'x';
-            layoutMaps.colemakdhs.KeyC = 'c';
-            layoutMaps.colemakdhs.KeyV = 'd';
-            layoutMaps.colemakdhs.KeyB = 'v';
+            layoutMaps.tarmakdh.KeyZ = 'z';
+            layoutMaps.tarmakdh.KeyX = 'x';
+            layoutMaps.tarmakdh.KeyC = 'c';
+            layoutMaps.tarmakdh.KeyV = 'd';
+            layoutMaps.tarmakdh.KeyB = 'v';
+            levelDictionaries.tarmakdh.lvl1 = 'qwagzxc';
+            levelDictionaries.tarmakdh.lvl3 = 'ftbv';
+
+            layoutMaps.canary.KeyZ = 'q';
+            layoutMaps.canary.KeyX = 'j';
+            layoutMaps.canary.KeyC = 'v';
+            layoutMaps.canary.KeyV = 'd';
+            layoutMaps.canary.KeyB = 'k';
+            layoutMaps.canary.KeyN = 'x';
+            layoutMaps.canary.KeyG = 'g';
+            layoutMaps.canary.KeyH = 'm';
+            layoutMaps.canary.KeyT = 'b';
+            layoutMaps.canary.KeyU = 'f';
+            break;
+        case 'ortho_extended':
+            cSheet = document.querySelector('.cheatsheet');
+            cSheet.parentNode.classList.add('ortho_extended');
+            cSheet.parentNode.classList.remove('ansi','iso','ortho');
+            cSheet.innerHTML = orthoExtDivs;
+            customInput.classList.add('ortho_extended');
+            customInput.classList.remove('ansi','iso','ortho');
+            inputKeyboard.innerHTML = customLayout.ortho_extended;
+
+            layoutMaps.colemakdh.KeyZ = 'z';
+            layoutMaps.colemakdh.KeyX = 'x';
+            layoutMaps.colemakdh.KeyC = 'c';
+            layoutMaps.colemakdh.KeyV = 'd';
+            layoutMaps.colemakdh.KeyB = 'v';
 
             layoutMaps.tarmakdh.KeyZ = 'z';
             layoutMaps.tarmakdh.KeyX = 'x';
