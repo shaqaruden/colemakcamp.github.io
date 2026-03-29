@@ -20,6 +20,38 @@ The following features are new in Colemak Camp:
 - Custom themes.
 - Sharing and loading custom themes via links.
 
+## Build Tools
+This project does not rely on npm or other similar tools. You may utilize any toolchain you want as long as you can reproduce same results.
+
+- Install VS Code
+- Install extensions:
+    - [Nu-Minify](https://marketplace.visualstudio.com/items?itemName=emapco.nu-minify)
+    - [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass)
+    - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+- Update VS Code settings:
+``` json
+{
+    "minify.js": {
+        "output": {
+            "comments": "/^!/"
+        }
+    },
+    "minify.minifyExistingOnSave": true,
+    "liveSassCompile.settings.useNewCompiler": true,
+    "liveServer.settings.donotShowInfoMsg": true
+}
+```
+
+- Watch Sass
+    - You will need to click 'Watch Sass' to compile `scss` files to `css`. Once clicked, all changes will be automatically compiled within that session. Note that this does not minify anything.
+- Minify on Save
+    - Using the settings above will enable this feature; otherwise enable it manually from extension settings.
+    - If the file you're minifying already has an existing `.min` file, simply saving the source will update the minified file. So, you need to save the `main.css` file to update the `main.min.css` file.
+    - If there is no existing `.min` file, run the `Minify` command on the source file. (Press F1 to search available commands, `>minify`.)
+
+## Pull Requests
+Please create an issue and await my response before submitting any pull requests.
+
 ## License
 This project is under the **[GNU Affero General Public License v3.0 (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.en.html)**, which is the same as Colemak Club and Colemak Academy, as seen in this [issue](https://github.com/Nemcorp/layoutacademy/issues/2).
 
